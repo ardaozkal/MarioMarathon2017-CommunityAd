@@ -12,7 +12,7 @@ draw = ImageDraw.Draw(img)
 
 j = requests.get("http://www.mariomarathon.com/rest/partners/{}".format(partner_name)).json()
 
-partner_total = "$" + str(j["domainTotal"])
+partner_total = "$" + str(round(j["domainTotal"]))
 total = "$" + str(round(j["total"]))
 
 left_width = draw.textsize(total, font=font)[0]
